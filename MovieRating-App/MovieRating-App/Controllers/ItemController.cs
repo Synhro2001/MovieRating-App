@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Threading;
+using Microsoft.AspNetCore.Mvc;
 using MovieRating_App.Models;
 
 namespace MovieRating_App.Controllers
@@ -24,6 +26,7 @@ namespace MovieRating_App.Controllers
         public ItemModel[] Get(int itemType)
         {
             ItemModel[] items = Items.Where(i => i.ItemType == itemType).ToArray();
+            Thread.Sleep(2000);
             return items;
         }
     }
